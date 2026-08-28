@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #f2f4ea;
+  --color-card: #fcfdf8;
+  --color-ink: #1d2a20;
+  --color-line: #dde4cd;
+
+  --color-moss-50: #eef1e3;
+  --color-moss-100: #e2e8d0;
+  --color-moss-200: #c8d4a9;
+  --color-moss-300: #a9bc81;
+  --color-moss-400: #8aa45d;
+  --color-moss-500: #6d8a42;
+  --color-moss-600: #556f2f;
+  --color-moss-700: #435727;
+  --color-moss-800: #31401f;
+  --color-moss-900: #22301a;
+  --color-moss-950: #16210f;
+
+  --color-leaf-100: #e7f0cd;
+  --color-leaf-200: #d3e5a6;
+  --color-leaf-300: #b8d47a;
+  --color-leaf-400: #97ba4e;
+  --color-leaf-500: #78a02d;
+  --color-leaf-600: #5f8221;
+  --color-leaf-700: #4a661b;
+
+  --color-hay-100: #f6ead0;
+  --color-hay-200: #eed7a2;
+  --color-hay-300: #e4bf6d;
+  --color-hay-400: #d9a83e;
+  --color-hay-500: #c98f20;
+  --color-hay-600: #a67218;
+  --color-hay-700: #825816;
+
+  --color-clay-100: #f6e0d8;
+  --color-clay-200: #ecc2b2;
+  --color-clay-300: #dd9b81;
+  --color-clay-400: #cd7455;
+  --color-clay-500: #b95638;
+  --color-clay-600: #99422a;
+  --color-clay-700: #7a3523;
+
+  --color-air-100: #ddeef4;
+  --color-air-200: #b9dce8;
+  --color-air-300: #8cc2d6;
+  --color-air-400: #5fa4c0;
+  --color-air-500: #4287a6;
+  --color-air-600: #356d87;
+  --color-air-700: #2c576c;
+
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-rise: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pop: pop 0.3s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  --animate-fadein: fadein 0.25s ease both;
+  --animate-toast: toast 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-spin-slow: slowturn 16s linear infinite;
+  --animate-drift: drift 30s ease-in-out infinite alternate;
+  --animate-dash: dashflow 2.6s linear infinite;
+  --animate-sway: sway 5s ease-in-out infinite;
+  --animate-pip: pip 2.2s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.94) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes toast {
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes slowturn {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes drift {
+    from { transform: translate3d(-2%, 0, 0); }
+    to { transform: translate3d(2%, 1.5%, 0); }
+  }
+  @keyframes dashflow {
+    to { stroke-dashoffset: -26; }
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  @keyframes pip {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(1000px 480px at 88% -8%, rgba(151, 186, 78, 0.16), transparent 62%),
+      radial-gradient(820px 440px at -12% 24%, rgba(66, 135, 166, 0.1), transparent 60%),
+      repeating-linear-gradient(0deg, transparent 0 47px, rgba(29, 42, 32, 0.032) 47px 48px);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: rgba(151, 186, 78, 0.45);
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 95;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(85, 111, 47, 0.35);
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@utility furrow {
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(242, 244, 234, 0.05) 0 2px,
+    transparent 2px 18px
+  );
+}
