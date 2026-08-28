@@ -143,7 +143,7 @@ function Shell() {
           <div className="flex items-center gap-2.5 rounded-xl bg-moss-800/70 p-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-leaf-500 font-display text-sm font-extrabold text-moss-950">D</span>
             <div className="min-w-0">
-              <p className="truncate text-sm font-bold text-paper">Pak Darmawan</p>
+              <p className="truncate text-sm font-bold text-paper">Pak Asep Sulistiyono</p>
               <p className="truncate text-[11px] text-paper/50">Poktan Makmur · Sukamaju</p>
             </div>
           </div>
@@ -179,7 +179,7 @@ function Shell() {
               <p className="mb-1.5 text-[11px] font-extrabold uppercase tracking-[0.16em] text-leaf-700">
                 {dateLong} · Kemarau I · Pekan ke-{week}
               </p>
-              <h1 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">{greet}, Pak Darmawan</h1>
+              <h1 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">{greet}, Pak Asep Sulistiyono</h1>
               <p className="mt-1.5 text-sm font-semibold text-ink/55">
                 {openToday > 0 ? `${openToday} agenda menunggu hari ini` : 'Semua agenda hari ini beres'} · panen cabai C-1 di depan mata
               </p>
